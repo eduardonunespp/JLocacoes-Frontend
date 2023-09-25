@@ -8,8 +8,11 @@ export default createGlobalStyle`
     }
 
     body, input, button, textarea {
-        font-size: 16px;
+        font-size: 1rem;
         outline: none;
+        font-family: 'montserrat', 'sans-serif';
+
+        background-color: ${(props) => props.theme.colors.BACKGROUND_PRIMARY};
     }
 
 `;
