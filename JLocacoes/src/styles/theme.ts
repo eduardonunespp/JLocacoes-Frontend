@@ -1,17 +1,29 @@
 export default {
-    //colors a serem definidas
-    colors: {
-        BACKGROUND_900: "#232129",
-        BACKGROUND_800: "#312E38",
-        BACKGROUND_700: "#3E3B47",
-        WHITE: "#F4EDE8",
-        ORANGE: "#FF9000",
-        GRAY_100: "#999591",
-        GRAY_300: "#666360",
-        RED: "#FF002E"
-    },
-    //fonts a serem definidas
-    font: {
+  colors: {
+    WHITE: "#FFFFFF",
 
-    }
+    BACKGROUND_PRIMARY: "#F2F2F2",
+    BACKGROUND_SECUNDARY: "#C9C9C9",
+    BACKGROUND_TERTIARY: "#D9D9D9",
+
+    PRIMARY: "#0367A6",
+    SECUNDARY: "4BD8F9",
+
+    FONT_PRIMARY: "#000000",
+
+    SUCCESS_PRIMARY: "#9AFECE",
+    SUCCESS_TERTIARY: "#017A3F",
+    SUCCESS_SECUNDARY: "#02DE74",
+
+    ERROR_PRIMARY: "#FBE9EB",
+    ERROR_TERTIARY: "#791620",
+    ERROR_SECUNDARY: "#D62839",
+
+    ALERT_PRIMARY: "#FFCE5C",
+    ALERT_SECUNDARY: "#FFB60A",
+    ALERT_TERTIARY: "#B88100",
+  },
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(","),
+  },
 };
