@@ -1,7 +1,5 @@
 function App() {
-  return <><p>
-    reset app
-    </p></>;
+  return <></>;
 }
 
 export default App;
