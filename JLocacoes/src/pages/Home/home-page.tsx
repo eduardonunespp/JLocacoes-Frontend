@@ -6,6 +6,8 @@ const Home: React.FC = () => {
     <S.Container>
 
       <Header />
+
+      <p className='statusApp' >under development</p>
     </S.Container>
   )
 };
