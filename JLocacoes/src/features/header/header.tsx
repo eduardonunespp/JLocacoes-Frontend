@@ -1,10 +1,10 @@
 import * as S from './header.styles'
-import { JLocacoesLogo } from '../../assets'
+import { JlocacoesLogo }  from '../../assets'
 
 const HeaderFeature: React.FC = () => {
     return(
         <S.HeaderContainer>
-            <JLocacoesLogo />
+            <img src={JlocacoesLogo} alt="LogoApp" />
             <div>
             <button>Cadastre-se</button>
             <button>Entrar</button>

@@ -1,1 +1,1 @@
-export { default as JLocacoesLogo } from './JLocações.svg'
+export { default as JlocacoesLogo } from './JLocações.svg'
