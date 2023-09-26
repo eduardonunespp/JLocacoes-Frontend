@@ -1,4 +1,5 @@
 import { Header } from "../../features/";
+import { FaConnectdevelop } from "react-icons/fa";
 import * as S from "./home-page.styles";
 
 const Home: React.FC = () => {
@@ -8,7 +9,11 @@ const Home: React.FC = () => {
 
       <S.BlockMock />
 
-      <p className="statusApp">under development</p>
+      <S.ContainerStatus>
+        <p className="statusApp">under development</p>
+
+        <FaConnectdevelop />
+      </S.ContainerStatus>
     </S.Container>
   );
 };
