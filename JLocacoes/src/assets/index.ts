@@ -1,0 +1,1 @@
+export { default as JLocacoesLogo } from './JLocações.svg'
