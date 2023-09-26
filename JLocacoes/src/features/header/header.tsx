@@ -1,16 +1,17 @@
-import * as S from './header.styles'
-import { JlocacoesLogo }  from '../../assets'
+import * as S from "./header.styles";
+import { JlocacoesLogo } from "../../assets";
+import { Button } from "../../shared/core/components";
 
 const HeaderFeature: React.FC = () => {
-    return(
-        <S.HeaderContainer>
-            <img src={JlocacoesLogo} alt="LogoApp" />
-            <div>
-            <button>Cadastre-se</button>
-            <button>Entrar</button>
-            </div>
-        </S.HeaderContainer>
-    )
-}
+  return (
+    <S.HeaderContainer>
+      <img src={JlocacoesLogo} alt="LogoApp" />
+      <S.ContainerButtons>
+        <S.ButtonCadastro>Cadastre-se</S.ButtonCadastro>
+        <Button>Entrar</Button>
+      </S.ContainerButtons>
+    </S.HeaderContainer>
+  );
+};
 
-export default HeaderFeature
+export default HeaderFeature;
