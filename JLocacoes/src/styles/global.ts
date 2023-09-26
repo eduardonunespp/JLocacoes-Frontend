@@ -10,7 +10,7 @@ export default createGlobalStyle`
     body, input, button, textarea {
         font-size: 1rem;
         outline: none;
-        font-family: 'montserrat', 'sans-serif';
+        font-family: ${(props) => props.theme.typography.FONT_PRIMARY} ;
 
         background-color: ${(props) => props.theme.colors.BACKGROUND_PRIMARY};
     }

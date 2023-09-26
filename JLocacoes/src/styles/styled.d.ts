@@ -9,6 +9,7 @@ declare module "styled-components" {
       BACKGROUND_TERTIARY: string;
       PRIMARY: string;
       SECUNDARY: string;
+      TERTIARY: string;
       FONT_PRIMARY: string;
       SUCCESS_PRIMARY: string;
       SUCCESS_TERTIARY: string;
@@ -21,7 +22,8 @@ declare module "styled-components" {
       ALERT_TERTIARY: string;
     };
     typography: {
-      fontFamily: string;
+      FONT_PRIMARY: string;
+      FONT_SECUNDARY: string;
     };
   }
 }

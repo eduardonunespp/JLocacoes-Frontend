@@ -2,13 +2,23 @@ export default {
   colors: {
     WHITE: "#FFFFFF",
 
-    BACKGROUND_PRIMARY: "#F2F2F2",
-    BACKGROUND_SECUNDARY: "#C9C9C9",
-    BACKGROUND_TERTIARY: "#D9D9D9",
+    // BACKGROUND_PRIMARY: "#F2F2F2",
+    // BACKGROUND_SECUNDARY: "#C9C9C9",
+    // BACKGROUND_TERTIARY: "#D9D9D9",
 
-    PRIMARY: "#0367A6",
-    SECUNDARY: "4BD8F9",
+    // PRIMARY: "#0367A6",
+    // SECUNDARY: "4BD8F9",
 
+    PRIMARY: "#71F79F",
+    SECUNDARY: "#85F8AA",
+    TERTIARY: "#97FAB4",
+
+
+    BACKGROUND_PRIMARY: "#1C2326",
+    BACKGROUND_SECUNDARY: "#31383A",
+    BACKGROUND_TERTIARY: "#474D50",
+
+    
     FONT_PRIMARY: "#000000",
 
     SUCCESS_PRIMARY: "#9AFECE",
@@ -24,6 +34,7 @@ export default {
     ALERT_TERTIARY: "#B88100",
   },
   typography: {
-    fontFamily: ["Montserrat", "sans-serif"].join(","),
+    FONT_PRIMARY: ["League Spartan", "sans-serif"].join(","),
+    FONT_SECUNDARY: ["Poppins", "sans-serif"].join(","),
   },
 };
