@@ -3,15 +3,30 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   width: 100%;
   height: 6.6875rem;
-  padding: 0rem 1.875rem;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid ${(props) => props.theme.colors.WHITE};
 
   img {
-    width: 11.25rem;
-    height: 1.875rem;
+    width: 180px;
+    height: 30px;
+
+    @media (max-width: 600px) {
+      width: 150px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0px 5px;
+  }
+
+  @media (max-width: 400px) {
+    button {
+      transform: scale(0.9);
+    }
   }
 `;
 
@@ -31,12 +46,15 @@ export const ButtonCadastro = styled.button`
   color: ${(props) => props.theme.colors.WHITE};
 
   animation-duration: 0.3s;
+  cursor: pointer;
 
   &:hover {
     filter: brightness(0.9);
   }
 
-  cursor: pointer;
+  @media (max-width: 600px) {
+    width: 100px;
+  }
 `;
 
 export const ContainerButtons = styled.div`
@@ -44,4 +62,8 @@ export const ContainerButtons = styled.div`
   justify-content: space-between;
 
   width: 273px;
+
+  @media (max-width: 600px) {
+    width: 230px;
+  }
 `;

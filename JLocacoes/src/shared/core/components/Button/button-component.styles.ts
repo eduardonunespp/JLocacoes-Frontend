@@ -1,19 +1,31 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export type ButtonProps = {
+  isDisabled?: boolean;
+  variant?: "danger" | "warning";
+};
+
+export const Button = styled.button<ButtonProps>`
   width: 108px;
   height: 43px;
   border: none;
+
+  ${(ButtonProps) => {
+    switch (ButtonProps.variant) {
+      case "danger":
+        return `background-color: #D62839; color: #ffffff;`;
+      case "warning":
+        return `background-color: orange; color: #ffffff; `;
+      default:
+        return `background-color: #71F79F; color: #253531;`;
+    }
+  }}
 
   font-size: 0.9rem;
   font-weight: 600;
 
   border-radius: 12px;
   font-family: ${(props) => props.theme.typography.FONT_SECUNDARY};
-
-  background-color: ${(props) => props.theme.colors.PRIMARY};
-
-  color: ${(props) => props.theme.colors.FONT_PRIMARY};
 
   animation-duration: 0.3s;
 

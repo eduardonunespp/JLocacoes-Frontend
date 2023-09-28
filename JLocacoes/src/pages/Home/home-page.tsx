@@ -9,6 +9,17 @@ const Home: React.FC = () => {
 
       <S.BlockMock />
 
+      <S.ContainerBlocks>
+        <S.Block />
+        <S.Block />
+        <S.Block />
+        <S.Block />
+        <S.Block />
+        <S.Block />
+        <S.Block />
+        <S.Block />
+      </S.ContainerBlocks>
+
       <S.ContainerStatus>
         <p className="statusApp">under development</p>
 

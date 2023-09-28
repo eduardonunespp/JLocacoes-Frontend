@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { AppRoutes } from "./routes";
 import GlobalStyles from "./styles/global";
 import theme from "./styles/theme";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
