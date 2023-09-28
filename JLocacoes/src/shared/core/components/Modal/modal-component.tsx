@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import { Button } from "../../components";
+import { Button, Input } from "../../components";
 import * as S from "./modal-component-cadastro.styles";
 
 function CadastroModal() {
@@ -17,7 +17,14 @@ function CadastroModal() {
         <Modal.Header closeButton>
           <Modal.Title>Autenticação</Modal.Title>
         </Modal.Header>
-        <Modal.Body><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eos velit accusamus, cum perferendis soluta, cumque quas veritatis at reiciendis laudantium mollitia, iusto maxime distinctio odit? Officiis, animi ipsum? Ullam.</p></Modal.Body>
+        <Modal.Body>
+
+
+        <Input placeholder="Entre com seu email" label="Email:" type="text" id=""  />
+        <Input placeholder="Entre com sua senha" label="Senha:" type="password" id=""  />
+        <Input placeholder="Comfirme sua senha" label="Confirmação de Senha:" type="password" id=""  />
+
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>Fechar</Button>
           <Button onClick={handleClose}>Salvar</Button>

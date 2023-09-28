@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${(props) => props.theme.colors.WHITE};
+  border-bottom: 1px solid #ccc;
 
   img {
     width: 180px;
