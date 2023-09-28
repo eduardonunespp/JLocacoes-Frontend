@@ -1,17 +1,18 @@
-import * as S from "./button-component.styles";
 import { forwardRef } from "react";
+import { IButton } from "../../domain-types";
+import * as S from "./button-component.styles";
 
-type ButtonInputType = {
-  isDisabled?: boolean;
-  variant?: 'danger' | 'warning'
-} & React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
-
-const Button = forwardRef<HTMLButtonElement, ButtonInputType>(
+const Button = forwardRef<HTMLButtonElement, IButton>(
   ({ children, isDisabled, variant, ...rest }, ref) => {
-    return <S.Button variant={variant} {...rest} ref={ref} children={children} isDisabled={isDisabled} />
+    return (
+      <S.Button
+        variant={variant}
+        {...rest}
+        ref={ref}
+        children={children}
+        isDisabled={isDisabled}
+      />
+    );
   }
 );
 
