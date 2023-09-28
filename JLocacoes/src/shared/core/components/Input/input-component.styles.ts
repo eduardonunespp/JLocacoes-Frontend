@@ -59,6 +59,6 @@ export const InputAuth = styled.div<InputAuthProps>`
   span {
     margin-top: 0.5rem;
     font-size: 0.8rem;
-    color: ${(props) => props.theme.colors.ALERT_SECUNDARY};
+    color: #DC4C64;
   }
 `;

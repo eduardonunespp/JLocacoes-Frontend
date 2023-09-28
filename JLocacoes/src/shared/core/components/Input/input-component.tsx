@@ -3,7 +3,7 @@ import * as S from "./input-component.styles";
 import { IInput } from "../../domain-types";
 import { forwardRef } from "react";
 
-export const InputAuth = forwardRef<HTMLInputElement, IInput>(
+export const Input = forwardRef<HTMLInputElement, IInput>(
   ({ label, id, placeholder, error, ...rest }, ref) => {
     const getErrorStyles = (error: string | undefined) => {
       return error !== undefined;
@@ -19,4 +19,4 @@ export const InputAuth = forwardRef<HTMLInputElement, IInput>(
   }
 );
 
-export default InputAuth;
+export default Input;
