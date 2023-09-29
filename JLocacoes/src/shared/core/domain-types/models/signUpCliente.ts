@@ -1,8 +1,7 @@
 export type ISignUpCliente = {
-    name: string;
-    email: string;
-    password: string;
-    passwordConfirm: string;
-}
+  email: string;
+  password: string;
+  passwordConfirm: string;
+};
 
-export default ISignUpCliente
+export default ISignUpCliente;

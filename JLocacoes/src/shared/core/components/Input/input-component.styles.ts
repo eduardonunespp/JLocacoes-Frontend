@@ -38,9 +38,9 @@ export const InputAuth = styled.div<InputAuthProps>`
 
     /* border: 1px solid #6c757d; */
 
-    background-color: #ccc;
+    background-color: #f9f9f9;
     color: ${(props) => props.theme.colors.FONT_PRIMARY};
-    border-radius: 0.25rem;
+    border-radius: 12px;
 
     &:focus {
       box-shadow: 0 0 0 0;
@@ -59,6 +59,6 @@ export const InputAuth = styled.div<InputAuthProps>`
   span {
     margin-top: 0.5rem;
     font-size: 0.8rem;
-    color: #DC4C64;
+    color: #dc4c64;
   }
 `;

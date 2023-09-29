@@ -14,7 +14,7 @@ export const BlockMock = styled.div`
 
   border-radius: 1rem;
 
-  background-color: #ccc;
+  background-color: ${(props) => props.theme.colors.BACKGROUND_SECUNDARY};
 `;
 
 export const ContainerBlocks = styled.div`
@@ -30,7 +30,7 @@ export const Block = styled.div`
   height: 150px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #ccc;
+  background-color: ${(props) => props.theme.colors.BACKGROUND_SECUNDARY};
 `;
 
 export const ContainerStatus = styled.div`

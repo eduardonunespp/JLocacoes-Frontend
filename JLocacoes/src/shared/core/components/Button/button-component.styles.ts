@@ -17,7 +17,7 @@ export const Button = styled.button<ButtonProps>`
       case "warning":
         return `background-color: orange; color: #ffffff; `;
       default:
-        return `background-color: #71F79F; color: #253531;`;
+        return `background-color: #0FEA5A; color: #253531;`;
     }
   }}
 
@@ -34,4 +34,6 @@ export const Button = styled.button<ButtonProps>`
   }
 
   cursor: pointer;
+
+  filter: brightness(${(props) => (props.isDisabled ? 0.7 : 1)});
 `;

@@ -1,4 +1,4 @@
-import { Header } from "../../features/";
+import { Header, Footer } from "../../features/";
 import { FaConnectdevelop } from "react-icons/fa";
 import * as S from "./home-page.styles";
 
@@ -19,6 +19,8 @@ const Home: React.FC = () => {
         <S.Block />
         <S.Block />
       </S.ContainerBlocks>
+
+      <Footer />
 
       <S.ContainerStatus>
         <p className="statusApp">under development</p>

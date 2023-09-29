@@ -23,7 +23,7 @@ export const HeaderContainer = styled.header`
     padding: 0px 5px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     button {
       transform: scale(0.9);
     }
@@ -43,7 +43,7 @@ export const ButtonCadastro = styled.button`
 
   background-color: ${(props) => props.theme.colors.BACKGROUND_SECUNDARY};
 
-  color: ${(props) => props.theme.colors.WHITE};
+  color: ${(props) => props.theme.colors.FONT_PRIMARY};
 
   animation-duration: 0.3s;
   cursor: pointer;
@@ -61,9 +61,27 @@ export const ContainerButtons = styled.div`
   display: flex;
   justify-content: space-between;
 
-  width: 273px;
+  width: 380px;
 
   @media (max-width: 600px) {
-    width: 230px;
+    width: 250px;
+  }
+
+  svg {
+    color: black;
+  }
+`;
+
+export const ContainerActions = styled.div`
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 43px;
+
+  transform: scale(1.2);
+
+  @media (max-width: 600px) {
+    display: none;
   }
 `;

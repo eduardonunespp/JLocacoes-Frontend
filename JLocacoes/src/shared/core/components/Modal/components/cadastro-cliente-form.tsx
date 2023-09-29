@@ -1,30 +1,30 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Input } from "../../Input/input-component";
-import { ISignUpCliente } from '../../../domain-types'
+import { ISignUpCliente } from "../../../domain-types";
+import * as S from "./cadastro-cliente-form.styles";
 
 type Props = {
   onSubmit: SubmitHandler<ISignUpCliente>;
 };
 
 export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
-  const { register, formState, handleSubmit } = useFormContext<ISignUpCliente>();
+  const { register, formState, handleSubmit } =
+    useFormContext<ISignUpCliente>();
 
-
-    console.log(formState.isValid)
+  console.log(formState.isValid);
 
   return (
     <div onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        label="Nome"
+      {/* <Input
+        label="Nome:"
         type="text"
-        
         id=""
         placeholder="Nome"
         error={formState.errors.name?.message}
         {...register("name")}
-      />
+      /> */}
       <Input
-        label="Email"
+        label="Email:"
         type="text"
         id=""
         placeholder="Email"
@@ -33,7 +33,7 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
       />
 
       <Input
-        label="Senha"
+        label="Senha:"
         type="password"
         id=""
         placeholder="Senha"
@@ -41,13 +41,17 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         {...register("password")}
       />
       <Input
-        label="Confirmação de Senha"
+        label="Confirmação de Senha:"
         type="password"
         id=""
         placeholder="Confirmação de Senha"
         error={formState.errors.passwordConfirm?.message}
         {...register("passwordConfirm")}
       />
+
+      <S.FooterModal>
+        <S.ButtonSave disabled={!formState.isValid}>Cadastrar</S.ButtonSave>
+      </S.FooterModal>
     </div>
   );
 };
