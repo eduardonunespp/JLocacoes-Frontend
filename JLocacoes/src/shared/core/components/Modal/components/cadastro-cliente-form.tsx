@@ -9,11 +9,15 @@ type Props = {
 export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
   const { register, formState, handleSubmit } = useFormContext<ISignUpCliente>();
 
+
+    console.log(formState.isValid)
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div onSubmit={handleSubmit(onSubmit)}>
       <Input
         label="Nome"
         type="text"
+        
         id=""
         placeholder="Nome"
         error={formState.errors.name?.message}
@@ -44,6 +48,6 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         error={formState.errors.passwordConfirm?.message}
         {...register("passwordConfirm")}
       />
-    </form>
+    </div>
   );
 };
