@@ -38,7 +38,7 @@ function CadastroModal() {
 
   return (
     <>
-      <S.ButtonCadastro onClick={handleShow}>Cadastrar</S.ButtonCadastro>
+      <S.ButtonCadastro onClick={handleShow}>Cadastre-se</S.ButtonCadastro>
 
       <Modal show={show} onHide={handleClose} centered>
         <form>
