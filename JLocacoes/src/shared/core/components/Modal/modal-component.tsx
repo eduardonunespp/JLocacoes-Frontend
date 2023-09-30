@@ -9,9 +9,10 @@ import * as S from "./modal-component-cadastro.styles";
 
 function CadastroModal() {
   const [show, setShow] = useState(false);
-  const [isRegisterSelectCLient, setIsRegisterSelectClient] = useState(true);
+  const [isRegisterSelectCLient, setIsRegisterSelectClient] =
+    useState<boolean>(true);
   const [isRegisterSelectAdvertiser, isSetRegisterSelectAdvertiser] =
-    useState(false);
+    useState<boolean>(false);
 
   const handleRegisterSelectClient = () => {
     setIsRegisterSelectClient(true);

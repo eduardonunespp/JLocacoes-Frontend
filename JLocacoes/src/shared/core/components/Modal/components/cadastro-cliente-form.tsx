@@ -11,8 +11,6 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
   const { register, formState, handleSubmit } =
     useFormContext<ISignUpCliente>();
 
-  console.log(formState.isValid);
-
   return (
     <div onSubmit={handleSubmit(onSubmit)}>
       {/* <Input

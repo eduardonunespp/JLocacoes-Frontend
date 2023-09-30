@@ -14,8 +14,8 @@ export const HeaderContainer = styled.header`
     height: 30px;
 
     @media (max-width: 600px) {
-      width: 150px;
-      height: 20px;
+      width: 160px;
+      height: 22px;
     }
   }
 
@@ -25,35 +25,8 @@ export const HeaderContainer = styled.header`
 
   @media (max-width: 450px) {
     button {
-      transform: scale(0.9);
+      transform: scale(0.92);
     }
-  }
-`;
-
-export const ButtonCadastro = styled.button`
-  width: 149px;
-  height: 43px;
-  border: none;
-
-  font-size: 0.9rem;
-  font-weight: 600;
-
-  border-radius: 12px;
-  font-family: ${(props) => props.theme.typography.FONT_SECUNDARY};
-
-  background-color: ${(props) => props.theme.colors.BACKGROUND_SECUNDARY};
-
-  color: ${(props) => props.theme.colors.FONT_PRIMARY};
-
-  animation-duration: 0.3s;
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-
-  @media (max-width: 600px) {
-    width: 100px;
   }
 `;
 
@@ -64,7 +37,7 @@ export const ContainerButtons = styled.div`
   width: 380px;
 
   @media (max-width: 600px) {
-    width: 250px;
+    width: 235px;
   }
 
   svg {

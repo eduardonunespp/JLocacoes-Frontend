@@ -55,7 +55,8 @@ export const ButtonSelect = styled.button<ButtonProps>`
   height: 37px;
   margin: 0px;
   border-radius: 8px;
-  background-color: ${(props) => (props.isbuttonselect ? "#71F79F" : "#ccc")};
+  background-color: ${(props) =>
+    props.isbuttonselect ? "#0FEA5A" : "#EAEBEB"};
   font-family: ${(props) => props.theme.typography.FONT_SECUNDARY};
   font-weight: 600;
   border: none;
