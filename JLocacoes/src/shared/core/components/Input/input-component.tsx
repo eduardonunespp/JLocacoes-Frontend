@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./input-component.styles";
 import { IInput } from "../../domain-types";
 import { forwardRef } from "react";
