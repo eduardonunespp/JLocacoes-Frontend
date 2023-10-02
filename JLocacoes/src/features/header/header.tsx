@@ -1,6 +1,6 @@
 import { FiHeart } from "react-icons/fi";
 import { PiShoppingCartBold } from "react-icons/pi";
-import { Button, CadastroModal } from "../../shared/core/components";
+import { CadastroModal, SignInModal } from "../../shared/core/components";
 import { JlocacoesLogo } from "../../assets";
 import * as S from "./header.styles";
 
@@ -14,7 +14,7 @@ const HeaderFeature: React.FC = () => {
           <PiShoppingCartBold />
         </S.ContainerActions>
         <CadastroModal />
-        <Button>Entrar</Button>
+        <SignInModal />
       </S.ContainerButtons>
     </S.HeaderContainer>
   );

@@ -4,4 +4,9 @@ export type ISignUpCliente = {
   passwordConfirm: string;
 };
 
+export type ISignInClient = {
+  email: string
+  password: string
+}
+
 export default ISignUpCliente;
