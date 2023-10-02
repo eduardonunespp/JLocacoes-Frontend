@@ -1,7 +1,7 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
-import { Input } from "../../Input/input-component";
-import { ISignUpCliente } from "../../../domain-types";
-import * as S from "./cadastro-cliente-form.styles";
+import { Input } from "../../../Input/input-component";
+import { ISignUpCliente } from "../../../../domain-types";
+import * as S from "./signUp-form.styles";
 
 type Props = {
   onSubmit: SubmitHandler<ISignUpCliente>;

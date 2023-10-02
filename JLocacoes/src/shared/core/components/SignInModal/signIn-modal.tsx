@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import { Button } from '../'
+import { Button } from '..'
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { SignInClientForm } from "./components/signIn-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AuthSignInClientValidator, ISignInClient } from "../../domain-types";
-import * as S from "./modal-sign-in.styles";
+import * as S from "./signIn-modal.styles";
 
 function SignInModal() {
   const [show, setShow] = useState(false);
@@ -44,7 +44,7 @@ function SignInModal() {
         <form>
           <Modal.Header closeButton>
             <Modal.Title>
-              <S.MessageTitle>Crie sua conta agora</S.MessageTitle>
+              <S.MessageTitle>Bem-vindo de volta!</S.MessageTitle>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>

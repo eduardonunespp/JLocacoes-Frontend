@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { RegisterFormCliente } from "./components/cadastro-cliente-form";
+import { RegisterFormCliente } from "./components/signUp-form-client/signUp-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AuthSignUpClientValidator } from "../../domain-types";
 import { ISignUpCliente } from "../..";
-import * as S from "./modal-component-cadastro.styles";
+import * as S from "./modal-signUp.styles";
 
 function CadastroModal() {
   const [show, setShow] = useState(false);
@@ -44,7 +44,7 @@ function CadastroModal() {
         <form>
           <Modal.Header closeButton>
             <Modal.Title>
-              <S.MessageTitle>Crie sua conta agora</S.MessageTitle>
+              <S.MessageTitle>Crie sua conta agora!</S.MessageTitle>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
