@@ -1,19 +1,19 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Input } from "../../../Input/input-component";
-import { ISignUpCliente } from "../../../../domain-types";
-import { InputCpf, InputCep } from "../../../index";
+import { ISignUpAnunciante } from "../../../../domain-types";
+import { InputCpf, InputCep, InputCnpj } from "../../../index";
 import * as S from "./signUp-form.styles";
 
 import { Col, Row } from "react-bootstrap";
 import InputTel from "../../../InputCep/input-cep";
 
 type Props = {
-  onSubmit: SubmitHandler<ISignUpCliente>;
+  onSubmit: SubmitHandler<ISignUpAnunciante>;
 };
 
-export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
+export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit }) => {
   const { register, formState, handleSubmit } =
-    useFormContext<ISignUpCliente>();
+    useFormContext<ISignUpAnunciante>();
 
   return (
     <div onSubmit={handleSubmit(onSubmit)}>
@@ -30,15 +30,24 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         </Col>
         <Col>
           <Input
-            label="Nome Social:"
+            label="Responsável:"
             type="text"
             id=""
-            placeholder="Nome"
-            error={formState.errors.NomeSocial?.message}
-            {...register("NomeSocial")}
+            placeholder="Responsavel"
+            error={formState.errors.Responsavel?.message}
+            {...register("Responsavel")}
           />
         </Col>
       </Row>
+
+      <Input
+        label="Descrição:"
+        type="text"
+        id=""
+        placeholder="Descrição"
+        error={formState.errors.Descricao?.message}
+        {...register("Descricao")}
+      />
 
       <Input
         label="Email:"
@@ -58,6 +67,14 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         {...register("Telefone")}
       />
 
+      <InputCnpj
+        label="CNPJ:"
+        type="text"
+        id=""
+        placeholder="00.000.000/0000-00"
+        error={formState.errors.Cnpj?.message}
+        {...register("Cnpj")}
+      />
       <Row>
         <Col>
           <InputCep
