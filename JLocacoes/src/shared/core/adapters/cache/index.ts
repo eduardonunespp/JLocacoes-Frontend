@@ -1,1 +1,1 @@
-export * from "./local-storage";
+export * as Cache from "./local-storage";
