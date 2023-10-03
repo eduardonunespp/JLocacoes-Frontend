@@ -9,8 +9,11 @@ import {
   ISignUpAnunciante,
 } from "../../domain-types";
 import { ISignUpCliente } from "../..";
-import * as S from "./modal-signUp.styles";
 import { AuthSignUpAnuncianteValidator } from "../../domain-types/validators/cadastro-anunciante";
+import { signUpCliente } from "../../services/auth/authService";
+import * as S from "./modal-signUp.styles";
+import { callSuccess, callError } from "../../sweet-alert";
+import { useErrors } from "../../../../hooks/use-errors";
 
 function CadastroModal() {
   const [show, setShow] = useState(false);
@@ -42,8 +45,38 @@ function CadastroModal() {
     resolver: yupResolver(AuthSignUpAnuncianteValidator),
   });
 
-  const onSubmit: SubmitHandler<ISignUpCliente> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<ISignUpCliente> = async (data) => {
+    try {
+      const response = await signUpCliente(data);
+      onSuccess();
+    } catch (error) {
+      onError(error as any);
+    }
+  };
+
+  const {
+    errors: errorsFromUseErrors,
+    setErrors,
+    addError,
+    clearErrors,
+  } = useErrors();
+
+  const onSuccess = () => {
+    callSuccess({
+      title: "Conta cadastrada com sucesso com sucesso",
+      description: "Acesse já sua conta",
+      onConfirm: () => {
+        form.reset();
+        handleClose();
+      },
+    });
+  };
+
+  const onError = (error: any) => {
+    callError({
+      title: (error as Error).name,
+      description: (error as Error).message,
+    });
   };
 
   return (

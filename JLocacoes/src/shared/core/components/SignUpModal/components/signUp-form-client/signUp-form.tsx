@@ -5,7 +5,7 @@ import { InputCpf, InputCep } from "../../../index";
 import * as S from "./signUp-form.styles";
 
 import { Col, Row } from "react-bootstrap";
-import InputTel from "../../../InputCep/input-cep";
+import { InputTel } from "../../../index";
 
 type Props = {
   onSubmit: SubmitHandler<ISignUpCliente>;

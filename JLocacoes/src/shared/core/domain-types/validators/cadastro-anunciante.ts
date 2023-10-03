@@ -12,7 +12,7 @@ export const AuthSignUpAnuncianteValidator = yup.object({
     .string()
     .min(14, "Telefone inválido")
     .required("Campo obrigatório"),
-  Cep: yup.string().min(9, "CEP inválido").required("Campo obrigatório"),
+  Cep: yup.string().min(6, "CEP inválido").required("Campo obrigatório"),
   Cpf: yup.string().min(14, "CPF inválido").required("Campo obrigatório"),
   Bairro: yup.string().required("Campo obrigatório"),
   Rua: yup.string().required("Campo obrigatório"),
