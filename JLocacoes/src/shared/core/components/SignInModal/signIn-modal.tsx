@@ -42,19 +42,22 @@ function SignInModal() {
   const onSubmit: SubmitHandler<ISignInClient> = async (data) => {
     setIsLoading(true)
     try {
-      const response = await loginCliente(data);
+      await loginCliente(data);
       onSuccess();
       setIsLoading(false)
     } catch (error) {
       onError(error as any);
       setIsLoading(false)
     }
+
+    
   };
+
 
   const onSubmit2: SubmitHandler<ISignInClient> = async (data) => {
     setIsLoading(true)
     try {
-      const response = await loginAnunciador(data);
+      await loginAnunciador(data);
       onSuccess();
       setIsLoading(false)
     } catch (error) {

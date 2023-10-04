@@ -48,7 +48,7 @@ function CadastroModal() {
   const onSubmit: SubmitHandler<ISignUpCliente> = async (data) => {
     setIsLoading(true)
     try {
-      const response = await signUpCliente(data);
+      await signUpCliente(data);
       onSuccess();
       setIsLoading(false)
     } catch (error) {
@@ -60,7 +60,7 @@ function CadastroModal() {
   const onSubmit2: SubmitHandler<ISignUpAnunciante> = async (data) => {
     setIsLoading(true)
     try {
-      const response = await signUpAnunciador(data);
+      await signUpAnunciador(data);
       onSuccess();
       setIsLoading(false)
     } catch (error) {
@@ -69,13 +69,7 @@ function CadastroModal() {
     }
   };
 
-  const {
-    errors: errorsFromUseErrors,
-    setErrors,
-    addError,
-    clearErrors,
-  } = useErrors();
-
+  
   const onSuccess = () => {
     callSuccess({
       title: "Conta cadastrada com sucesso com sucesso",
