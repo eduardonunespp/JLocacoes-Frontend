@@ -1,1 +1,1 @@
-export * from './signUpCliente'
+export * from './auth'
