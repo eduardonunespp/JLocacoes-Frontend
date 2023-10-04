@@ -156,14 +156,14 @@ export const ContainerInput = styled.div`
 
   background-color: ${(props) => props.theme.colors.BACKGROUND_PRIMARY};
   border-radius: 10px;
-  height: 60px;
+  height: 50px;
   align-items: center;
   justify-content: space-around;
 
   input {
     width: 400px;
     border: none;
-    height: 50px;
+    height: 40px;
 
     margin-top: 10px;
   }
@@ -173,7 +173,7 @@ export const ContainerInput = styled.div`
   }
 
   @media (max-width: 600px) {
-    width: 300px;
+    width: 320px;
 
     input {
       width: 240px;
