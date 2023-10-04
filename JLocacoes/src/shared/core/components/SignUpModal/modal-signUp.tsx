@@ -13,7 +13,6 @@ import { AuthSignUpAnuncianteValidator } from "../../domain-types/validators/cad
 import { signUpCliente, signUpAnunciador } from "../../services/auth/authService";
 import * as S from "./modal-signUp.styles";
 import { callSuccess, callError } from "../../sweet-alert";
-import { useErrors } from "../../../../hooks/use-errors";
 
 function CadastroModal() {
   const [show, setShow] = useState(false);

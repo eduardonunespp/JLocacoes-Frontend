@@ -1,7 +1,7 @@
 import { FileUtils } from "../utils";
 
 export const createImage = async (url: string) => {
-  return await new Promise((resolve, reject) => {
+  return await new Promise((resolve) => {
     const image = new Image();
     image.addEventListener("load", () => resolve(image));
     image.addEventListener("error", () => resolve(image));

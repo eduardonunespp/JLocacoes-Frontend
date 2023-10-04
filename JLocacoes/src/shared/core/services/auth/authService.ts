@@ -5,7 +5,6 @@ import { HttpStatusCode, ISignUpAnunciante } from "../../domain-types";
 import { UnexpectedError, ValidationError } from "../../errors";
 import { useMutation } from "react-query";
 import { ISignUpCliente, ISignInClient } from "../../domain-types";
-import { Cache } from "../../adapters/";
 
 export async function signUpCliente(data: ISignUpCliente) {
   const headers = {

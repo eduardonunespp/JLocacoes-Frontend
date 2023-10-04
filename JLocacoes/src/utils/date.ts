@@ -36,7 +36,6 @@ export const brFormatToDate = (date: string) => {
 
 // '2023-01-29' ->
 export const toBrFormat = (date: string): string => {
-  const data = new Date(date);
   const splited = date.split("-");
   return `${splited[2]}/${splited[1]}/${splited[0]}`;
 };
