@@ -1,17 +1,19 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Input } from "../../../Input/input-component";
 import { ISignUpAnunciante } from "../../../../domain-types";
-import { InputCpf, InputCep, InputCnpj } from "../../../index";
+import { InputCpf, InputCep, InputCnpj, InputTel } from "../../../index";
 import * as S from "./signUp-form.styles";
+import Spinner from 'react-bootstrap/Spinner'
 
 import { Col, Row } from "react-bootstrap";
-import InputTel from "../../../InputCep/input-cep";
+
 
 type Props = {
   onSubmit: SubmitHandler<ISignUpAnunciante>;
+  isLoading: boolean
 };
 
-export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit }) => {
+export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit, isLoading }) => {
   const { register, formState, handleSubmit } =
     useFormContext<ISignUpAnunciante>();
 
@@ -33,7 +35,7 @@ export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit }) => {
             label="Responsável:"
             type="text"
             id=""
-            placeholder="Responsavel"
+            placeholder="Responsável"
             error={formState.errors.Responsavel?.message}
             {...register("Responsavel")}
           />
@@ -131,7 +133,7 @@ export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit }) => {
             label="Número:"
             type="text"
             id=""
-            placeholder="Numero"
+            placeholder="Número"
             error={formState.errors.Numero?.message}
             {...register("Numero")}
           />
@@ -166,7 +168,13 @@ export const RegisterFormAnunciante: React.FC<Props> = ({ onSubmit }) => {
       />
 
       <S.FooterModal>
-        <S.ButtonSave disabled={!formState.isValid}>Cadastrar</S.ButtonSave>
+      <S.ButtonSave disabled={!formState.isValid}>
+          {isLoading ? (
+            <Spinner animation="border" variant="light" size="sm" />
+          ) : (
+            "Cadastre-se"
+          )}
+        </S.ButtonSave>
       </S.FooterModal>
     </div>
   );

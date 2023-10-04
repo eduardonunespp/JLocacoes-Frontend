@@ -10,7 +10,7 @@ import {
 } from "../../domain-types";
 import { ISignUpCliente } from "../..";
 import { AuthSignUpAnuncianteValidator } from "../../domain-types/validators/cadastro-anunciante";
-import { signUpCliente } from "../../services/auth/authService";
+import { signUpCliente, signUpAnunciador } from "../../services/auth/authService";
 import * as S from "./modal-signUp.styles";
 import { callSuccess, callError } from "../../sweet-alert";
 import { useErrors } from "../../../../hooks/use-errors";
@@ -46,11 +46,26 @@ function CadastroModal() {
   });
 
   const onSubmit: SubmitHandler<ISignUpCliente> = async (data) => {
+    setIsLoading(true)
     try {
       const response = await signUpCliente(data);
       onSuccess();
+      setIsLoading(false)
     } catch (error) {
       onError(error as any);
+      setIsLoading(false)
+    }
+  };
+
+  const onSubmit2: SubmitHandler<ISignUpAnunciante> = async (data) => {
+    setIsLoading(true)
+    try {
+      const response = await signUpAnunciador(data);
+      onSuccess();
+      setIsLoading(false)
+    } catch (error) {
+      onError(error as any);
+      setIsLoading(false)
     }
   };
 
@@ -79,12 +94,13 @@ function CadastroModal() {
     });
   };
 
+  const [ isLoading, setIsLoading ] = useState<boolean>(false)
+
   return (
     <>
       <S.ButtonCadastro onClick={handleShow}>Cadastrar</S.ButtonCadastro>
 
       <Modal show={show} onHide={handleClose} centered>
-        <form>
           <Modal.Header closeButton>
             <Modal.Title>
               <S.MessageTitle>Crie sua conta agora!</S.MessageTitle>
@@ -114,15 +130,14 @@ function CadastroModal() {
 
             {isRegisterSelectCLient ? (
               <FormProvider {...form}>
-                <RegisterFormCliente onSubmit={onSubmit} />
+                <RegisterFormCliente isLoading={isLoading}  onSubmit={onSubmit} />
               </FormProvider>
             ) : (
               <FormProvider {...form2}>
-                <RegisterFormAnunciante onSubmit={onSubmit} />
+                <RegisterFormAnunciante isLoading={isLoading} onSubmit={onSubmit2} />
               </FormProvider>
             )}
           </Modal.Body>
-        </form>
       </Modal>
     </>
   );

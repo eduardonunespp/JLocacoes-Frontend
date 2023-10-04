@@ -14,7 +14,7 @@ export const call: CallAlert = ({ type, title, description, onConfirm }) => {
       icon: type,
       title,
       text: description,
-      allowOutsideClick: false,
+      allowOutsideClick: true,
       returnFocus: false,
     })
     .then((isConfirm) => {

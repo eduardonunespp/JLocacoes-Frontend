@@ -5,18 +5,9 @@ import { HttpStatusCode, ISignUpAnunciante } from "../../domain-types";
 import { UnexpectedError, ValidationError } from "../../errors";
 import { useMutation } from "react-query";
 import { ISignUpCliente, ISignInClient } from "../../domain-types";
+import { Cache } from "../../adapters/";
 
-export async function signUpCliente(data: ISignUpAnunciante) {
-  const headers = {
-    "Content-Type": `multipart/form-data`,
-  };
-  const response = await api.post("fornecedor/fornecedores-cadastro", data, {
-    headers,
-  });
-  return response.data;
-}
-
-export async function signUpAnunciador(data: ISignUpCliente) {
+export async function signUpCliente(data: ISignUpCliente) {
   const headers = {
     "Content-Type": `multipart/form-data`,
   };
@@ -26,17 +17,31 @@ export async function signUpAnunciador(data: ISignUpCliente) {
   return response.data;
 }
 
+export async function signUpAnunciador(data: ISignUpAnunciante) {
+  const headers = {
+    "Content-Type": `multipart/form-data`,
+  };
+  const response = await api.post("fornecedor/fornecedores-cadastro", data, {
+    headers,
+  });
+  console.log(response);
+  return response.data;
+}
+
 export const loginCliente = async (data: ISignInClient): Promise<string> => {
   let accessToken;
 
   const response = await HttpClient.of(setupCassinoApiConfig()).request({
-    url: "cliente/clientes-auth/login-client",
+    url: "cliente/clientes-auth/login-cliente",
     method: "POST",
     body: {
       email: data.email,
       senha: data.password,
     },
   });
+
+  const responseAsString = JSON.stringify(accessToken);
+  localStorage.setItem("acessToken", responseAsString);
 
   switch (response.statusCode) {
     case HttpStatusCode.Ok:
@@ -60,6 +65,9 @@ export const loginAnunciador = async (data: ISignInClient): Promise<string> => {
       senha: data.password,
     },
   });
+
+  const responseAsString = JSON.stringify(accessToken);
+  localStorage.setItem("acessToken", responseAsString);
 
   switch (response.statusCode) {
     case HttpStatusCode.Ok:

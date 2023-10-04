@@ -3,20 +3,25 @@ import { Input } from "../../../Input/input-component";
 import { ISignUpCliente } from "../../../../domain-types";
 import { InputCpf, InputCep } from "../../../index";
 import * as S from "./signUp-form.styles";
+import Spinner from "react-bootstrap/Spinner";
 
 import { Col, Row } from "react-bootstrap";
 import { InputTel } from "../../../index";
 
 type Props = {
   onSubmit: SubmitHandler<ISignUpCliente>;
+  isLoading: boolean;
 };
 
-export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
+export const RegisterFormCliente: React.FC<Props> = ({
+  onSubmit,
+  isLoading,
+}) => {
   const { register, formState, handleSubmit } =
     useFormContext<ISignUpCliente>();
 
   return (
-    <div onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Row>
         <Col>
           <Input
@@ -24,8 +29,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
             type="text"
             id=""
             placeholder="Nome"
-            error={formState.errors.Nome?.message}
-            {...register("Nome")}
+            error={formState.errors.nome?.message}
+            {...register("nome")}
           />
         </Col>
         <Col>
@@ -34,8 +39,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
             type="text"
             id=""
             placeholder="Nome"
-            error={formState.errors.NomeSocial?.message}
-            {...register("NomeSocial")}
+            error={formState.errors.nomeSocial?.message}
+            {...register("nomeSocial")}
           />
         </Col>
       </Row>
@@ -45,8 +50,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="text"
         id=""
         placeholder="Email"
-        error={formState.errors.Email?.message}
-        {...register("Email")}
+        error={formState.errors.email?.message}
+        {...register("email")}
       />
 
       <InputTel
@@ -54,8 +59,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="text"
         id=""
         placeholder="Telefone"
-        error={formState.errors.Telefone?.message}
-        {...register("Telefone")}
+        error={formState.errors.telefone?.message}
+        {...register("telefone")}
       />
 
       <Row>
@@ -65,8 +70,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
             type="text"
             id=""
             placeholder="CEP"
-            error={formState.errors.Cep?.message}
-            {...register("Cep")}
+            error={formState.errors.cep?.message}
+            {...register("cep")}
           />
         </Col>
 
@@ -76,8 +81,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
             type="text"
             id=""
             placeholder="CPF"
-            error={formState.errors.Cpf?.message}
-            {...register("Cpf")}
+            error={formState.errors.cpf?.message}
+            {...register("cpf")}
           />
         </Col>
       </Row>
@@ -87,8 +92,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="text"
         id=""
         placeholder="Cidade"
-        error={formState.errors.Cidade?.message}
-        {...register("Cidade")}
+        error={formState.errors.cidade?.message}
+        {...register("cidade")}
       />
 
       <Input
@@ -96,8 +101,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="text"
         id=""
         placeholder="Bairro"
-        error={formState.errors.Bairro?.message}
-        {...register("Bairro")}
+        error={formState.errors.bairro?.message}
+        {...register("bairro")}
       />
 
       <Input
@@ -105,18 +110,18 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="text"
         id=""
         placeholder="Rua"
-        error={formState.errors.Rua?.message}
-        {...register("Rua")}
+        error={formState.errors.rua?.message}
+        {...register("rua")}
       />
       <Row>
         <Col>
           <Input
             label="Número:"
-            type="text"
+            type="number"
             id=""
-            placeholder="Numero"
-            error={formState.errors.Numero?.message}
-            {...register("Numero")}
+            placeholder="Número"
+            error={formState.errors.numero?.message}
+            {...register("numero")}
           />
         </Col>
         <Col>
@@ -125,8 +130,8 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
             type="text"
             id=""
             placeholder="UF"
-            error={formState.errors.Uf?.message}
-            {...register("Uf")}
+            error={formState.errors.uf?.message}
+            {...register("uf")}
           />
         </Col>
       </Row>
@@ -136,21 +141,27 @@ export const RegisterFormCliente: React.FC<Props> = ({ onSubmit }) => {
         type="password"
         id=""
         placeholder="Senha"
-        error={formState.errors.Senha?.message}
-        {...register("Senha")}
+        error={formState.errors.senha?.message}
+        {...register("senha")}
       />
       <Input
         label="Confirmação de Senha:"
         type="password"
         id=""
         placeholder="Confirmação de Senha"
-        error={formState.errors.ConfirmacaoSenha?.message}
-        {...register("ConfirmacaoSenha")}
+        error={formState.errors.confirmacaoSenha?.message}
+        {...register("confirmacaoSenha")}
       />
 
       <S.FooterModal>
-        <S.ButtonSave disabled={!formState.isValid}>Cadastrar</S.ButtonSave>
+        <S.ButtonSave disabled={!formState.isValid}>
+          {isLoading ? (
+            <Spinner animation="border" variant="light" size="sm" />
+          ) : (
+            "Cadastre-se"
+          )}
+        </S.ButtonSave>
       </S.FooterModal>
-    </div>
+    </form>
   );
 };

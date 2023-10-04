@@ -14,7 +14,7 @@ export const InputCep = forwardRef<ReactInputMask, IInput>(
       <S.InputAuth error={getErrorStyles(error)}>
         <label htmlFor={id}>{label}</label>
         <InputMask
-          mask="99999-99"
+          mask="99999-999"
           maskChar=""
           {...rest}
           ref={ref}

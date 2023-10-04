@@ -1,26 +1,21 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
-import { Input } from "../../Input/input-component";
-import { ISignInClient } from "../../../domain-types";
+import { Input } from "../../../Input/input-component";
+import { ISignInClient } from "../../../../domain-types";
 import * as S from "./signIn-form.styles";
+import Spinner from "react-bootstrap/Spinner";
 
 type Props = {
   onSubmit: SubmitHandler<ISignInClient>;
+  isLoading: boolean
 };
 
-export const SignInClientForm: React.FC<Props> = ({ onSubmit }) => {
+export const SignInClientForm: React.FC<Props> = ({ onSubmit, isLoading }) => {
   const { register, formState, handleSubmit } =
     useFormContext<ISignInClient>();
 
   return (
-    <div onSubmit={handleSubmit(onSubmit)}>
-      {/* <Input
-        label="Nome:"
-        type="text"
-        id=""
-        placeholder="Nome"
-        error={formState.errors.name?.message}
-        {...register("name")}
-      /> */}
+    <form onSubmit={handleSubmit(onSubmit)}>
+   
       <Input
         label="Email:"
         type="text"
@@ -39,8 +34,16 @@ export const SignInClientForm: React.FC<Props> = ({ onSubmit }) => {
         {...register("password")}
       />
       <S.FooterModal>
-        <S.ButtonSave disabled={!formState.isValid}>Cadastrar</S.ButtonSave>
+        <S.ButtonSave disabled={!formState.isValid}>
+
+        {isLoading ? (
+            <Spinner animation="border" variant="light" size="sm" />
+          ) : (
+            "Entrar"
+          )}
+
+        </S.ButtonSave>
       </S.FooterModal>
-    </div>
+    </form>
   );
 };
